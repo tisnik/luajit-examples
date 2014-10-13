@@ -6,7 +6,7 @@
 
 
 
--- ctyri explicitne inicializovane promenne
+-- sest explicitne inicializovanych promennych
 local a = nil
 local b = 0
 local c = 42
