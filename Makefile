@@ -20,7 +20,13 @@ build:	${ASM_DIR}/test01.asm \
 	${ASM_DIR}/test09.asm \
 	${ASM_DIR}/test10.asm \
 	${ASM_DIR}/test11.asm \
-	${ASM_DIR}/test12.asm
+	${ASM_DIR}/test12.asm \
+	${ASM_DIR}/test13.asm \
+	${ASM_DIR}/test14.asm \
+	${ASM_DIR}/test15.asm \
+	${ASM_DIR}/test16.asm \
+	${ASM_DIR}/test17.asm \
+	${ASM_DIR}/test18.asm
 
 ${ASM_DIR}/%.asm:	${SRC_DIR}/%.lua
 	${LUAJIT_EXE} ${LUAJIT_FLAGS} $< $@
