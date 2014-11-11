@@ -2,7 +2,14 @@
 ; do IR využívaného virtuálním strojem a JIT
 ; překladačem LuaJIT.
 
+
+
+; metadata se základními informacemi o zdrojovém kódu,
+; který byl použit pro vygenerování tohoto IR
  -- BYTECODE -- test04.lua:0-11
+
+
+
 ; print()
  0001    GGET     0   0      ; získání reference na funkci se jménem  "print"
  0002    CALL     0   1   1  ; volání funkce print()

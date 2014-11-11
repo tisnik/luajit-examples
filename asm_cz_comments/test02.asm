@@ -2,7 +2,14 @@
 ; do IR využívaného virtuálním strojem a JIT
 ; překladačem LuaJIT.
 
+
+
+; metadata se základními informacemi o zdrojovém kódu,
+; který byl použit pro vygenerování tohoto IR
  -- BYTECODE -- test02.lua:0-14
+
+
+
 ; překlad čtveřice deklarací:
 ; local a
 ; local b
