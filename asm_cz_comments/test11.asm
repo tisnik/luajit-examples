@@ -2,7 +2,13 @@
 ; do IR využívaného virtuálním strojem a JIT
 ; překladačem LuaJIT.
 
+
+
+; metadata se základními informacemi o zdrojovém kódu,
+; který byl použit pro vygenerování tohoto IR
  -- BYTECODE -- test11.lua:0-18
+
+
 
 ; 1,10,1 (start, stop, step)
  0001    KSHORT   0   1        ; do slotu číslo 0 uložit hodnotu 1 (počáteční hodnota počitadla)
