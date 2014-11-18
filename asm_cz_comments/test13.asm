@@ -2,7 +2,13 @@
 ; do IR využívaného virtuálním strojem a JIT
 ; překladačem LuaJIT.
 
+
+
+; metadata se základními informacemi o zdrojovém kódu,
+; který byl použit pro vygenerování tohoto IR
 -- BYTECODE -- test13.lua:0-40
+
+
 
 ; local a = 1
 0001    KSHORT   0   1        ; do slotu číslo 0 uložit hodnotu 1
