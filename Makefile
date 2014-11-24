@@ -42,7 +42,12 @@ build:	${ASM_DIR}/test01.asm \
 	${ASM_DIR}/test31.asm \
 	${ASM_DIR}/test32.asm \
 	${ASM_DIR}/test33.asm \
-	${ASM_DIR}/test34.asm
+	${ASM_DIR}/test34.asm \
+	${ASM_DIR}/test35.asm \
+	${ASM_DIR}/test36.asm \
+	${ASM_DIR}/test37.asm \
+	${ASM_DIR}/test38.asm \
+	${ASM_DIR}/test39.asm
 
 ${ASM_DIR}/%.asm:	${SRC_DIR}/%.lua
 	${LUAJIT_EXE} ${LUAJIT_FLAGS} $< $@
