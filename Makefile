@@ -1,5 +1,6 @@
 SRC_DIR=src
 ASM_DIR=asm
+OUT_DIR=out
 
 LUAJIT_EXE=luajit
 LUAJIT_FLAGS=-bl
@@ -8,6 +9,7 @@ all:	build
 
 clean:
 	rm -f $(ASM_DIR)/*
+	rm -f $(OUT_DIR)/*
 
 build:	${ASM_DIR}/test01.asm \
 	${ASM_DIR}/test02.asm \
@@ -47,8 +49,19 @@ build:	${ASM_DIR}/test01.asm \
 	${ASM_DIR}/test36.asm \
 	${ASM_DIR}/test37.asm \
 	${ASM_DIR}/test38.asm \
-	${ASM_DIR}/test39.asm
+	${ASM_DIR}/test39.asm \
+	${OUT_DIR}/test40.out \
+	${OUT_DIR}/test41.out \
+	${OUT_DIR}/test42.out \
+	${OUT_DIR}/test43.out \
+	${OUT_DIR}/test44.out \
+	${OUT_DIR}/test45.out \
+	${OUT_DIR}/test46.out \
+	${OUT_DIR}/test47.out
 
 ${ASM_DIR}/%.asm:	${SRC_DIR}/%.lua
 	${LUAJIT_EXE} ${LUAJIT_FLAGS} $< $@
+
+${OUT_DIR}/%.out:	${SRC_DIR}/%.lua
+	${LUAJIT_EXE} -jv=$@ $<
 
