@@ -1,0 +1,5 @@
+[TRACE   1 test47.lua:15 loop]
+[TRACE   2 test47.lua:13 -> 1]
+[TRACE   3 (1/3) test47.lua:17 -> 2]
+[TRACE   4 (2/1) test47.lua:19 -> 2]
+[TRACE   5 (3/1) test47.lua:12 -> 2]
