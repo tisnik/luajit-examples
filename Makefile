@@ -57,7 +57,13 @@ build:	${ASM_DIR}/test01.asm \
 	${OUT_DIR}/test44.out \
 	${OUT_DIR}/test45.out \
 	${OUT_DIR}/test46.out \
-	${OUT_DIR}/test47.out
+	${OUT_DIR}/test47.out \
+	${OUT_DIR}/test48.out \
+	${OUT_DIR}/test49.out \
+	${OUT_DIR}/test50.out \
+	${OUT_DIR}/test51.out \
+	${OUT_DIR}/test52.out \
+	${OUT_DIR}/test53.out
 
 ${ASM_DIR}/%.asm:	${SRC_DIR}/%.lua
 	${LUAJIT_EXE} ${LUAJIT_FLAGS} $< $@
