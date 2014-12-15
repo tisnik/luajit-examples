@@ -1,0 +1,64 @@
+---- TRACE 1 start test47.lua:15
+0018  ADDVN    3   3   0  ; 1
+0019  FORL    12 => 0018
+---- TRACE 1 IR
+0001    int SLOAD  #13   I
+0002 >  num SLOAD  #4    T
+0003  + num ADD    0002  +1  
+0004  + int ADD    0001  +1  
+0005 >  int LE     0004  +100
+0006 ------ LOOP ------------
+0007  + num ADD    0003  +1  
+0008  + int ADD    0004  +1  
+0009 >  int LE     0008  +100
+0010    int PHI    0004  0008
+0011    num PHI    0003  0007
+---- TRACE 1 stop -> loop
+
+---- TRACE 2 start test47.lua:13
+0011  KSHORT  12  50
+0012  ISGT    12  11
+0013  JMP     12 => 0021
+0014  KSHORT  12   1
+0015  KSHORT  13 100
+0016  KSHORT  14   1
+0017  JFORI   12 => 0020
+---- TRACE 2 IR
+0001    int SLOAD  #9    I
+0002 >  int GE     0001  +50 
+---- TRACE 2 stop -> 1
+
+---- TRACE 3 start 1/3 test47.lua:17
+0020  JMP     12 => 0022
+0022  JFORL    8   2
+---- TRACE 3 IR
+0001    num SLOAD  #4    PI
+0002    int SLOAD  #9    I
+0003    int ADD    0002  +1  
+0004 >  int LE     0003  +100
+---- TRACE 3 stop -> 2
+
+---- TRACE 4 start 2/1 test47.lua:19
+0021  DIVVN    3   3   1  ; 100
+0022  JFORL    8   2
+---- TRACE 4 IR
+0001    int SLOAD  #9    PI
+0002 >  num SLOAD  #4    T
+0003    num DIV    0002  +100
+0004    int ADD    0001  +1  
+0005 >  int LE     0004  +100
+---- TRACE 4 stop -> 2
+
+---- TRACE 5 start 3/1 test47.lua:12
+0023  FORL     4 => 0007
+0007  KSHORT   8   1
+0008  KSHORT   9 100
+0009  KSHORT  10   1
+0010  JFORI    8 => 0023
+---- TRACE 5 IR
+0001    num SLOAD  #4    PI
+0002    int SLOAD  #5    I
+0003    int ADD    0002  +1  
+0004 >  int LE     0003  +100
+---- TRACE 5 stop -> 2
+

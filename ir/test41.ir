@@ -1,0 +1,17 @@
+---- TRACE 1 start test41.lua:12
+0007  ADDVN    1   1   0  ; 1
+0008  FORL     2 => 0007
+---- TRACE 1 IR
+0001    int SLOAD  #3    I
+0002 >  int SLOAD  #2    T
+0003 >+ int ADDOV  0002  +1  
+0004  + int ADD    0001  +1  
+0005 >  int LE     0004  +60 
+0006 ------ LOOP ------------
+0007 >+ int ADDOV  0003  +1  
+0008  + int ADD    0004  +1  
+0009 >  int LE     0008  +60 
+0010    int PHI    0004  0008
+0011    int PHI    0003  0007
+---- TRACE 1 stop -> loop
+

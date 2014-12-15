@@ -1,0 +1,20 @@
+---- TRACE 1 start test53.lua:17
+0001  UGET     0   0      ; x
+0002  ADDVN    0   0   0  ; 1
+0003  USETV    0   0      ; x
+0004  UGET     0   1      ; y
+0005  ADDVN    0   0   0  ; 1
+0006  USETV    1   0      ; y
+0007  RET0     0   1
+---- TRACE 1 IR
+0001    fun SLOAD  #0    R
+0002 >  p32 UREFO  0001  #0  
+0003 >  int ULOAD  0002
+0004 >  int ADDOV  0003  +1  
+0005    int USTORE 0002  0004
+0006 >  p32 UREFO  0001  #1  
+0007 >  int ULOAD  0006
+0008 >  int ADDOV  0007  +1  
+0009    int USTORE 0006  0008
+---- TRACE 1 stop -> return
+

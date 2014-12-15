@@ -1,0 +1,27 @@
+---- TRACE 1 start test48.lua:17
+0008  ADDVN    1   1   0  ; 1
+0009  KSHORT   7  50
+0010  ISGE     7   6
+0011  JMP      7 => 0013
+0012  ADDVN    2   2   0  ; 1
+0013  FORL     3 => 0008
+---- TRACE 1 IR
+0001    int SLOAD  #4    I
+0002 >  int SLOAD  #2    T
+0003 >+ int ADDOV  0002  +1  
+0004 >  int GT     0001  +50 
+0005 >  int SLOAD  #3    T
+0006 >+ int ADDOV  0005  +1  
+0007  + int ADD    0001  +1  
+0008 >  int LE     0007  +100
+0009 ------ LOOP ------------
+0010 >+ int ADDOV  0003  +1  
+0011 >  int GT     0007  +50 
+0012 >+ int ADDOV  0006  +1  
+0013  + int ADD    0007  +1  
+0014 >  int LE     0013  +100
+0015    int PHI    0007  0013
+0016    int PHI    0003  0010
+0017    int PHI    0006  0012
+---- TRACE 1 stop -> loop
+

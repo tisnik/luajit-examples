@@ -1,0 +1,22 @@
+---- TRACE 1 start test43.lua:12
+0007  ADDVN    1   1   0  ; 1
+0008  ADDVN    0   0   0  ; 1
+0009  JMP      2 => 0003
+0003  KSHORT   2 100
+0004  ISGE     0   2
+0005  JMP      2 => 0010
+0006  LOOP     2 => 0010
+---- TRACE 1 IR
+0001 >  int SLOAD  #2    T
+0002 >+ int ADDOV  0001  +1  
+0003 >  int SLOAD  #1    T
+0004 >+ int ADDOV  0003  +1  
+0005 >  int LT     0004  +100
+0006 ------ LOOP ------------
+0007 >+ int ADDOV  0002  +1  
+0008 >+ int ADDOV  0004  +1  
+0009 >  int LT     0008  +100
+0010    int PHI    0002  0007
+0011    int PHI    0004  0008
+---- TRACE 1 stop -> loop
+
