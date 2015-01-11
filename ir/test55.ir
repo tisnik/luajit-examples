@@ -1,0 +1,25 @@
+---- TRACE 1 start test55.lua:13
+0008  ADDVN    0   0   0  ; 1
+0009  MULVN    1   1   1  ; 3
+0010  MULVN    2   2   2  ; 5
+0011  JMP      3 => 0004
+0004  KSHORT   3 100
+0005  ISGE     0   3
+0006  JMP      3 => 0012
+0007  LOOP     3 => 0012
+---- TRACE 1 IR
+0001 >  num SLOAD  #1    T
+0002  + num ADD    0001  +1  
+0003 >  num SLOAD  #2    T
+0004  + num MUL    0003  +3  
+0005 >  num SLOAD  #3    T
+0006  + num MUL    0005  +5  
+0007 >  num LT     0002  +100
+0008 ------ LOOP ------------
+0009  + num ADD    0002  +1  
+0010  + num MUL    0004  +3  
+0011  + num MUL    0006  +5  
+0012 >  num LT     0009  +100
+0013    num PHI    0002  0009
+0014    num PHI    0004  0010
+0015    num PHI    0006  0011

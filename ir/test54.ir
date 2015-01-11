@@ -1,25 +1,23 @@
----- TRACE 1 start test53.lua:13
-0008  ADDVN    0   0   0  ; 1
-0009  MULVN    1   1   1  ; 3
-0010  MULVN    2   2   2  ; 5
-0011  JMP      3 => 0004
-0004  KSHORT   3 100
-0005  ISGE     0   3
-0006  JMP      3 => 0012
-0007  LOOP     3 => 0012
+---- TRACE 1 start test54.lua:13
+0008  DIVNV    7   2   0  ; 1
+0009  ADDVV    1   1   7
+0010  MULVN    2   2   1  ; 2
+0011  FORL     3 => 0008
 ---- TRACE 1 IR
-0001 >  num SLOAD  #1    T
-0002  + num ADD    0001  +1  
-0003 >  num SLOAD  #2    T
-0004  + num MUL    0003  +3  
-0005 >  num SLOAD  #3    T
-0006  + num MUL    0005  +5  
-0007 >  num LT     0002  +100
-0008 ------ LOOP ------------
-0009  + num ADD    0002  +1  
-0010  + num MUL    0004  +3  
-0011  + num MUL    0006  +5  
-0012 >  num LT     0009  +100
-0013    num PHI    0002  0009
-0014    num PHI    0004  0010
-0015    num PHI    0006  0011
+0001    int SLOAD  #4    CI
+0002 >  num SLOAD  #3    T
+0003    num DIV    +1    0002
+0004 >  num SLOAD  #2    T
+0005  + num ADD    0004  0003
+0006  + num ADD    0002  0002
+0007  + int ADD    0001  +1  
+0008 >  int LE     0007  +1000
+0009 ------ LOOP ------------
+0010    num DIV    +1    0006
+0011  + num ADD    0010  0005
+0012  + num ADD    0006  0006
+0013  + int ADD    0007  +1  
+0014 >  int LE     0013  +1000
+0015    int PHI    0007  0013
+0016    num PHI    0006  0012
+0017    num PHI    0005  0011
