@@ -36,6 +36,7 @@ int main(int argc, char **argv)
     luaopen_base(L);
     /* nacteni externiho skriptu, jeho preklad a nasledne spusteni */
     result = luaL_dofile(L, argv[1]);
+
     /* odstraneni vsech objektu asociovanych se stavem "Lua" */
     lua_close(L);
     if (result != 0)
