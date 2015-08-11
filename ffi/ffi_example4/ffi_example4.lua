@@ -4,7 +4,7 @@ local ffi = require("ffi")
 
 local lib = ffi.load("ffi_example4")
 
--- Definice ceckovskych funkci ze standardni knihovny
+-- Definice ceckovskych funkci z uzivatelske knihovny
 
 ffi.cdef[[
 void function1(void);
