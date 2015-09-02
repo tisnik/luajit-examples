@@ -46,7 +46,7 @@ end
 -- Format information about the Lua function call.
 --
 function tracer.formatLuaCall(event, debugInfo)
-    return event .. " •" .. (debugInfo.name or "(unknown Lua)")
+    return " " .. event .. " •" .. (debugInfo.name or "(unknown Lua)")
            .. "•"
            .. "  <" .. debugInfo.short_src .. ":" .. debugInfo.linedefined .. ">"
 end
@@ -57,7 +57,7 @@ end
 -- Format information about C function call.
 --
 function tracer.formatCCall(event, debugInfo)
-    return event .. " •" .. (debugInfo.name or "(unknown C)")
+    return " " .. event .. " •" .. (debugInfo.name or "(unknown C)")
            .. "•"
            .. "  [" .. debugInfo.what .. "]"
 end
