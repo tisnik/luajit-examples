@@ -2,8 +2,7 @@
 -- Lua tracer v.3
 --
 local tracer = {
-    level=0,
-    pcall_level=0
+    level=0
 }
 
 
